@@ -1,6 +1,6 @@
 router ospf {{ ospf_process }}
 {% for network in networks %}
-network {{network['net']}} area {{ ospf_area }}
+network {{network['net']}} {{network['mask']}} area {{ ospf_area }}
 {% endfor %}
 
 {% for int in interface %}
@@ -8,3 +8,4 @@ interface {{int['ospf_int']}}
 ip ospf {{ ospf_process }} area {{ ospf_area }}
 !
 {% endfor %}
+

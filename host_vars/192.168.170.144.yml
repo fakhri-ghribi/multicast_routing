@@ -6,8 +6,10 @@ interfaces:
     ip_address: 192.168.3.254/24
   
 networks:
-  - net: 192.168.3.0 0.0.0.255
-  - net: 192.168.23.0 0.0.0.255
+  - net: 192.168.3.0 
+    mask: 0.0.0.255
+  - net: 192.168.23.0 
+    mask: 0.0.0.255
   
 interface:
   - ospf_int: GigabitEthernet1
