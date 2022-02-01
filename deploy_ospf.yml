@@ -4,6 +4,17 @@
   connection: local
   gather_facts: no
   tasks:
+    - name: Create Loopback
+      ios_interface:
+        name: "{{item.name}}"
+        enabled: True
+        state: present
+      with_items: "{{local_loopback}}"
+    - name: Set Loopback IPs
+      ios_l3_interface:
+        name: "{{item.name}}"
+        ipv4: "{{item.ip_address}}"
+      with_items: "{{local_loopback}}"
     - name: Set Interfaces IPs
       with_items: "{{interfaces}}"
       ios_l3_interface:
@@ -20,5 +31,6 @@
     - name: Deploy ospf
       ios_config:
         src: "{{inventory_hostname}}.cfg"
+    
         
       

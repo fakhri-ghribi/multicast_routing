@@ -1,4 +1,7 @@
 ---
+local_loopback:
+  - name: Loopback0
+  - ip_address: 22.22.22.22/32
 interfaces:
   - name: GigabitEthernet1
     ip_address: 192.168.12.2/24
@@ -21,5 +24,6 @@ interface:
   - ospf_int: GigabitEthernet3
 
 ospf_router_id: 2.2.2.2
+rp-address: 22.22.22.22
 ospf_process: 1
 ospf_area: 0
