@@ -9,7 +9,7 @@ router ospf {{ ospf_process }}
 {% for int in interface %}
 interface {{int['ospf_int']}}
   ip ospf {{ ospf_process }} area {{ ospf_area }}
-  ip pim spare-mode
+  ip pim sparse-mode
 !
 {% endfor %}
 
