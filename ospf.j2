@@ -1,8 +1,6 @@
 router ospf {{ospf_process}}
-  auto-cost reference-bandwidht 1000
 {% for network in networks %}
 network {{network.net}} area {{ospf_area}}
-
 {% endfor %}
 
 {% for int in interface %}
