@@ -20,5 +20,6 @@ interface:
   - ospf_int: GigabitEthernet2
   - ospf_int: GigabitEthernet3
 
+ospf_router_id: 1.1.1.1
 ospf_process: 1
 ospf_area: 0
