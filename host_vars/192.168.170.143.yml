@@ -1,0 +1,16 @@
+---
+interfaces:
+  - name: GigabitEthernet1
+    ip_address: 192.168.12.2/24
+  - name: GigabitEthernet2
+    ip_address: 192.168.24.2/24
+  - name: GigabitEthernet3
+    ip_address: 192.168.23.2/24
+
+networks:
+  - net: 192.168.23.0 255.255.255.0
+  - net: 192.168.12.0 255.255.255.0
+  - net: 192.168.24.0 255.255.255.0
+
+ospf_process: 1
+ospf_area: 0

@@ -1,0 +1,11 @@
+router ospf {{ospf_process}}
+{% for network in networks %}
+network {{network.net}} area {{opsf_area}}
+auto-cost reference-bandwidht 1000
+!
+{% endfor %}
+
+{% for int in interfaces %}
+ip ospf {{ospf_process}} area {{opsf_area}}
+!
+{% endfor %}

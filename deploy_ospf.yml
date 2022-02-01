@@ -1,0 +1,23 @@
+---
+- name: Configure interfaces and deploy OSPF
+  hosts: multicat
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Set Interfaces IPs
+      with_items: "{{interfaces}}"
+      ios_l3_interface:
+        name: "{{item.name}}"
+        ipv4: "{{item.ip_address}}"
+    - name: Enable interface no shutdow 
+      with_items: "{{interfaces}}"
+      ios_interface:
+        name: "{{item.name}}"
+        enabled: True
+        state: present
+    - name: Generate config file cfg
+      template: src=ospf.j2 dest={{inventory_hostname}}.cfg
+    - name: Deploy ospf
+      ios_config:
+        src:{{invenotry_hostname}}.cfg  
+      
