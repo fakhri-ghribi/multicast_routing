@@ -1,4 +1,8 @@
 ---
+local_loopback:
+  - name: Loopback0
+  - ip_address: 44.44.44.44/32
+
 interfaces:
   - name: GigabitEthernet1
     ip_address: 192.168.14.4/24
