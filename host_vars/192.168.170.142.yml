@@ -11,5 +11,11 @@ networks:
   - net: 192.168.1.0 255.255.255.0
   - net: 192.168.12.0 255.255.255.0
   - net: 192.168.14.0 255.255.255.0
+
+interface:
+  - ospf_int: GigabitEthernet1
+  - ospf_int: GigabitEthernet2
+  - ospf_int: GigabitEthernet3
+
 ospf_process: 1
 ospf_area: 0
