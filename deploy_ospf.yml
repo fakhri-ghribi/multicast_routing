@@ -5,16 +5,16 @@
   gather_facts: no
   tasks:
     - name: Create Loopback
+      with_items: "{{local_loopback}}"
       ios_interface:
         name: "{{item.name}}"
         enabled: True
         state: present
-      with_items: "{{local_loopback}}"
     - name: Set Loopback IPs
+      with_items: "{{local_loopback}}"
       ios_l3_interface:
         name: "{{item.name}}"
         ipv4: "{{item.ip_address}}"
-      with_items: "{{local_loopback}}"
     - name: Set Interfaces IPs
       with_items: "{{interfaces}}"
       ios_l3_interface:
