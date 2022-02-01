@@ -19,5 +19,5 @@
       template: src=ospf.j2 dest={{inventory_hostname}}.cfg
     - name: Deploy ospf
       ios_config:
-        src:{{invenotry_hostname}}.cfg  
+        src:{{inventory_hostname}}.cfg  
       
