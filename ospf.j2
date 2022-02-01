@@ -1,5 +1,5 @@
 ip multicast-routing
-ip pim rp-address {{ rp-address }}
+ip pim rp-address {{ rp_address }}
 router ospf {{ ospf_process }}
   router-id {{ ospf_router_id }}
   {% for network in networks %}

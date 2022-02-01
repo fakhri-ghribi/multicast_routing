@@ -26,6 +26,6 @@ interface:
   - ospf_int: GigabitEthernet3
 
 ospf_router_id: 4.4.4.4
-rp-address: 22.22.22.22
+rp_address: 22.22.22.22
 ospf_process: 1
 ospf_area: 0
